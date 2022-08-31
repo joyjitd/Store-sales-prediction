@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Total Data Science</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<img src=
+"https://www.gotenzo.com/wp-content/uploads/2018/03/0_I95gSMSKfIcYFfa3_.png"
+         alt="zomato image", width="300", height="150", style="float:right">
+
+<style>
+body {
+  background-image: url("https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-504244904_458994_kajooa.jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+
+
+ <div class="login">
+	<h1>Big Mart Sales Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Item weight" placeholder="Item weight" required="required" />
+        <input type="text" name="Item fat content" placeholder="Item fat content" required="required" />
+		<input type="text" name="Item type" placeholder="Item type" required="required" />
+        <input type="text" name="Item MRP" placeholder="Item MRP" required="required" />
+        <input type="text" name="Outlet size" placeholder="Outlet size" required="required" />
+        <input type="text" name="Outlet location type" placeholder="Outlet location type" required="required" />
+        <input type="text" name="Outlet years" placeholder="Outlet years" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     <h2>
+       {{ prediction_text }}
+     </h2>
+
+
+ </div>
+
+
+</body>
+</html>
